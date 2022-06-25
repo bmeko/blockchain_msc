@@ -1,10 +1,11 @@
 #! /usr/bin/python3
-from asyncore import read
+
+from ntpath import join
 import os 
 import sys
 
-from matplotlib.cbook import index_of
-#import inter  
+
+import inter  
 filen= sys.argv
 
 os.system("touch " + filen[-1])
@@ -60,5 +61,8 @@ if check==False:
     path=path_arr[0]
 else:
     path=des_path+"/"+file_name
-print(path)
-#inter.create()DD
+
+updat="/".join(cleaned_details[0][5:8])
+print(updat, cleaned_details[0][-1],path)
+inter.create(updat, cleaned_details[0][-1],path,cleaned_details[0][4])
+print("success")
